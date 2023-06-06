@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row justify-content-center text-center">
+    <h2>Hijo: Noooo!</h2>
+  </div>
+  <div class="row justify-content-center text-center">
+    <div class="col-3">
+      <button class="btn btn-primary" (click)="show()" >Mostrar/Ocultar</button>
+    </div>
+  </div>
+  <div *ngIf="isShow" class="row justify-content-center">
+    <app-prueba-segundo/>
+  </div>
+</div>
