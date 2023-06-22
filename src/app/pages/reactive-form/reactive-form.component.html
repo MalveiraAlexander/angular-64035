@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row justify-content-center text-center">
+    <h1>Formulario Reactivo</h1>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <form [formGroup]="form" (ngSubmit)="save()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre</label>
+          <input formControlName="name" type="text" maxlength="50" class="form-control" id="name" aria-describedby="name">
+          <app-validator [control]="form.controls['name']" name="Nombre"></app-validator>
+        </div>
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Apellido</label>
+          <input formControlName="lastname" type="text" maxlength="50" class="form-control" id="lastname">
+          <app-validator [control]="form.controls['lastname']" name="Apellido"></app-validator>
+        </div>
+        <div class="mb-3 form-check">
+          <input (change)="changeSecond()" formControlName="hasSecond" type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Tiene segundo nombre</label>
+        </div>
+        <div class="mb-3">
+          <label for="secondname" class="form-label">Segundo Nombre</label>
+          <input formControlName="secondname" type="text" maxlength="50" class="form-control" id="secondname">
+          <app-validator [control]="form.controls['secondname']" name="Segundo Nombre"></app-validator>
+        </div>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

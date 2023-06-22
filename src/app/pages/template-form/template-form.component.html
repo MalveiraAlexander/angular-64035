@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row justify-content-center text-center">
+    <h1>Formulario Template</h1>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <form #form="ngForm" (ngSubmit)="save(form)">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre</label>
+          <input [(ngModel)]="person.name" minlength="2" maxlength="50" required type="text" class="form-control" id="name" name="name">
+          <app-validator [control]="form.controls['name']" name="Nombre"></app-validator>
+        </div>
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Apellido</label>
+          <input [(ngModel)]="person.lastname" minlength="2" maxlength="50" required type="email" class="form-control" id="lastname" name="lastname">
+          <app-validator [control]="form.controls['lastname']" name="Apellido"></app-validator>
+        </div>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
