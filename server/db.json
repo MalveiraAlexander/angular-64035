@@ -6,6 +6,20 @@
       "email": "jdoe@edu.com",
       "age": 25,
       "password": "s563fas456fs56fas6f45as64fa4sf4a"
+    },
+    {
+      "name": "Joan Rey",
+      "email": "jrey@edu.com",
+      "age": 26,
+      "password": "QXZlY2VzMjAyMyQ=",
+      "id": 2
+    },
+    {
+      "name": "Eduardo Tolaba",
+      "email": "etoalaba@edu.com",
+      "age": 22,
+      "password": "SG9sYTIwMjMk",
+      "id": 3
     }
   ],
   "roles": [

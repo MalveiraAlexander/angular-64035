@@ -4,6 +4,8 @@ import { RolesComponent } from './pages/roles/roles.component';
 import { UsersComponent } from './pages/users/users.component';
 import { MainRountingModule } from './main-rounting.module';
 import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -13,8 +15,10 @@ import { HttpClientModule } from "@angular/common/http";
   ],
   imports: [
     CommonModule,
+    SharedModule,
     MainRountingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModule { }
