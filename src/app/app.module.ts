@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './modules/main/main.component';
 import { AuthComponent } from './modules/auth/auth.component';
 import { HeaderComponent } from './modules/main/components/header/header.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientInterceptor } from './interceptors/http-client.interceptor';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,13 @@ import { HeaderComponent } from './modules/main/components/header/header.compone
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpClientInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
